@@ -10,12 +10,12 @@ export class ItemsController {
   ) {
   }
   @Get()
-  async getAllUsers(): Promise<IItems[]> {
+  async getAllItems(): Promise<IItems[]> {
     return await this.itemsService.getAllItems();
   }
 
   @Post()
-  async createUser(@Body() createItem: ItemsDto): Promise<IItems>{
+  async createItems(@Body() createItem: ItemsDto): Promise<IItems>{
     return await this.itemsService.createItem(createItem);
   }
 }
