@@ -8,6 +8,6 @@ export interface IPoint extends Document {
   city: string;
   latitude: string;
   longitude: string;
-  items: number;
+  items: [];
   image: string;
 }

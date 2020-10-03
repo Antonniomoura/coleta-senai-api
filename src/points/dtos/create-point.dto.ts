@@ -13,7 +13,6 @@ export class PointDto {
   readonly email: string;
 
   @ApiProperty()
-  @IsNumber()
   readonly whatsapp: number;
 
   @ApiProperty()
@@ -27,17 +26,13 @@ export class PointDto {
   readonly city: string;
 
   @ApiProperty()
-  @IsString()
   readonly latitude: string;
 
   @ApiProperty()
-  @IsString()
   readonly longitude: string;
 
   @ApiProperty()
-  @IsNumber()
-  @IsNotEmpty()
-  readonly items: number;
+  readonly items: [];
 
   @ApiProperty()
   @IsString()

@@ -17,13 +17,7 @@ export class AppController {
   seeUploadedFile(@Param('imgpath') image, @Res() res) {
     return res.sendFile(image, { root: './upload' });
   }
-  //
-  // @Post('uploads')
-  // @UseInterceptors(FileInterceptor('file'))
-  // async uploadFile(@UploadedFile() file: any): Promise<any> {
-  //   console.log(file)
-  //   // return await this.uploadService.uploadFile(file)
-  // }
+
   @Post('uploads')
   @UseInterceptors(FileInterceptor('file',
     {

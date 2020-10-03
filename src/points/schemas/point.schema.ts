@@ -8,6 +8,6 @@ export const PointsSchema = new mongoose.Schema({
   city: { type: String },
   latitude: { type: String },
   longitude: { type: String },
-  items: { type: Number },
+  items: { type: [] },
   image: { type: String },
 }, { collection: 'points', timestamps: true });
