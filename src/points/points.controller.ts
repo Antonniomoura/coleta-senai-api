@@ -2,7 +2,9 @@ import { Body, Controller, Get, Post } from '@nestjs/common';
 import { PointsService } from './points.service';
 import { PointDto } from './dtos/create-point.dto';
 import { IPoint } from './interfaces/point.interface';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Points')
 @Controller('points')
 export class PointsController {
   constructor(

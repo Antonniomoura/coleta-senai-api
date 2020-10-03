@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsNotEmpty, IsString } from 'class-validator';
+import { IsNotEmpty, IsString, IsNumber } from 'class-validator';
 
 export class PointDto {
   @ApiProperty()
@@ -13,7 +13,7 @@ export class PointDto {
   readonly email: string;
 
   @ApiProperty()
-  @Number()
+  @IsNumber()
   readonly whatsapp: number;
 
   @ApiProperty()
@@ -35,7 +35,7 @@ export class PointDto {
   readonly longitude: string;
 
   @ApiProperty()
-  @Number()
+  @IsNumber()
   @IsNotEmpty()
   readonly items: number;
 
