@@ -11,11 +11,11 @@ export class ItemsController {
   }
   @Get()
   async getAllUsers(): Promise<IItems[]> {
-    return await this.itemsService.getAllUsers();
+    return await this.itemsService.getAllItems();
   }
 
   @Post()
-  async createUser(@Body() createUserDto: ItemsDto): Promise<IItems>{
-    return await this.itemsService.createUser(createUserDto);
+  async createUser(@Body() createItem: ItemsDto): Promise<IItems>{
+    return await this.itemsService.createItem(createItem);
   }
 }

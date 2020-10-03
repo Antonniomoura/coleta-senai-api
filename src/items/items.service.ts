@@ -7,16 +7,16 @@ import { InjectModel } from '@nestjs/mongoose';
 @Injectable()
 export class ItemsService {
   constructor(
-    @InjectModel('items') private readonly userModel: Model<IItems>,
+    @InjectModel('items') private readonly itemModel: Model<IItems>,
   ) {
   }
 
-  async getAllUsers(): Promise<IItems[]> {
-    return this.userModel.find().exec();
+  async getAllItems(): Promise<IItems[]> {
+    return this.itemModel.find().exec();
   }
 
-  async createUser(createUserDto: ItemsDto): Promise<IItems> {
-    return this.userModel.create(createUserDto);
+  async createItem(createItem: ItemsDto): Promise<IItems> {
+    return this.itemModel.create(createItem);
   }
 
 }
