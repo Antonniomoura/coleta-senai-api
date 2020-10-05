@@ -9,5 +9,6 @@ export const PointsSchema = new mongoose.Schema({
   latitude: { type: String },
   longitude: { type: String },
   items: { type: [] },
+  status: { type: Boolean },
   image: { type: String },
 }, { collection: 'points', timestamps: true });

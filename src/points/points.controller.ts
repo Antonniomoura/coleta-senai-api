@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Put } from '@nestjs/common';
 import { PointsService } from './points.service';
 import { PointDto } from './dtos/create-point.dto';
 import { IPoint } from './interfaces/point.interface';
@@ -20,5 +20,13 @@ export class PointsController {
   @Post()
   async createPoints(@Body() createItem: PointDto): Promise<IPoint> {
     return await this.pointsService.createPoints(createItem);
+  }
+
+  @Put(':_id')
+  async updateExpense(
+    @Body() createPoint: PointDto,
+    @Param('_id') _id: string,
+  ): Promise<IPoint> {
+    return await this.pointsService.updatePoints(_id, createPoint);
   }
 }

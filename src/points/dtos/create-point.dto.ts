@@ -35,6 +35,9 @@ export class PointDto {
   readonly items: [];
 
   @ApiProperty()
+  status: boolean;
+
+  @ApiProperty()
   @IsString()
   image: string;
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Model } from "mongoose";
+import { Model } from 'mongoose';
 import { IPoint } from './interfaces/point.interface';
 import { PointDto } from './dtos/create-point.dto';
 
@@ -17,5 +17,10 @@ export class PointsService {
 
   async createPoints(createItem: PointDto): Promise<IPoint> {
     return this.pointModel.create(createItem);
+  }
+
+  async updatePoints(_id: string, createItem: PointDto): Promise<IPoint> {
+    return await this.pointModel.findOneAndUpdate({ _id },
+      { $set: createItem }).exec();
   }
 }

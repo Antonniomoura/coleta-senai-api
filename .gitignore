@@ -33,3 +33,4 @@ upload
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+.env
