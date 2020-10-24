@@ -29,6 +29,12 @@ export class PointDto {
   readonly latitude: string;
 
   @ApiProperty()
+  readonly userId: string;
+
+  @ApiProperty()
+  readonly byUserId: string;
+
+  @ApiProperty()
   readonly longitude: string;
 
   @ApiProperty()

@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
 import { PointsService } from './points.service';
 import { PointDto } from './dtos/create-point.dto';
 import { IPoint } from './interfaces/point.interface';
@@ -28,5 +28,10 @@ export class PointsController {
     @Param('_id') _id: string,
   ): Promise<IPoint> {
     return await this.pointsService.updatePoints(_id, createPoint);
+  }
+
+  @Delete(':_id')
+  async deletePointer(@Param('_id') _id: string): Promise<void> {
+    await this.pointsService.deleteUser(_id);
   }
 }

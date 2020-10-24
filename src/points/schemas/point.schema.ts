@@ -11,4 +11,6 @@ export const PointsSchema = new mongoose.Schema({
   items: { type: [] },
   status: { type: Boolean },
   image: { type: String },
+  byUserId: { type: String },
+  userId: { type: String, required: true },
 }, { collection: 'points', timestamps: true });

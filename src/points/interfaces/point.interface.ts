@@ -9,6 +9,8 @@ export interface IPoint extends Document {
   latitude: string;
   status: boolean;
   longitude: string;
+  userId: string;
+  byUserId: string;
   items: [];
   image: string;
 }

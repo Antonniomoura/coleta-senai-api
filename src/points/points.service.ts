@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { IPoint } from './interfaces/point.interface';
@@ -23,4 +23,9 @@ export class PointsService {
     return await this.pointModel.findOneAndUpdate({ _id },
       { $set: createItem }).exec();
   }
+
+  async deleteUser(_id: string): Promise<any> {
+    return await this.pointModel.findByIdAndRemove(_id).exec();
+  }
+
 }
