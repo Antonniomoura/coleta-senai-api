@@ -5,6 +5,8 @@ import { ItemsModule } from './items/items.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config';
 import { PointsModule } from './points/points.module';
+import { AuthModule } from './auth/auth.module';
+import { JwtStrategy } from './auth/jwt.strategy';
 
 @Module({
   imports: [
@@ -18,10 +20,11 @@ import { PointsModule } from './points/points.module';
         useCreateIndex: true,
         useFindAndModify: true,
       }),
+    AuthModule,
     ItemsModule,
     PointsModule
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, JwtStrategy],
 })
 export class AppModule {}
